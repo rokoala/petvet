@@ -5,12 +5,12 @@
     <div class="card">
 
       <label class="item item-input">
-        <input placeholder="Usuário" type="text">
+        <input placeholder="Usuário" type="text" ng-model="vm.user">
       </label>
       <label class="item item-input">
-        <input placeholder="Senha" type="password">
+        <input placeholder="Senha" type="password" ng-model="vm.password">
       </label>
-      <button class="button button-block button-calm" ng-click="login()">
+      <button class="button button-block button-calm" ng-click="vm.login()">
         Login
       </button>
       <p class="text-center">

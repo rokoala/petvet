@@ -1,11 +1,4 @@
-angular.module('starter.controllers', [])
-
-
-
-.controller('LoginController',function () {
-
-
-})
+angular.module('petvet.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
