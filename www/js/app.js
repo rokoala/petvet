@@ -28,10 +28,9 @@ angular.module('petvet', ['ionic', 'petvet.controllers'])
   .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'js/components/home/home.template.html',
-    controller: 'HomeController'
+    templateUrl: 'js/components/menu/menu.template.html',
+    controller: 'MenuController'
   })
-
 
   .state('login', {
     url: '/login',
@@ -40,11 +39,37 @@ angular.module('petvet', ['ionic', 'petvet.controllers'])
     controllerAs: 'vm'
   })
 
-  .state('app.search', {
-    url: '/search',
+
+  .state('app.home', {
+    url:'/home',
+    views:{
+      'menuContent':{
+        templateUrl:'js/components/home/home.template.html',
+        controller:'HomeController',
+        controllerAs:'vm'
+      }
+    }
+  })
+
+  .state('app.patients', {
+    url: '/patients',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl:'js/components/patients/patients.template.html',
+        controller:'PatientsController',
+        controllerAs:'vm'
+      }
+    }
+  })
+
+
+  .state('app.patient', {
+    url: '/patient/:patientId',
+    views: {
+      'menuContent': {
+        templateUrl:'js/components/patient/patient.template.html',
+        controller:'PatientController',
+        controllerAs:'vm'
       }
     }
   })
@@ -77,5 +102,5 @@ angular.module('petvet', ['ionic', 'petvet.controllers'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/login');
 });

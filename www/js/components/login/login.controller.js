@@ -12,7 +12,7 @@
     var self=this
 
     self.login = function () {
-      $location.path('/app');
+      $location.path('/app/home');
     };
   };
 

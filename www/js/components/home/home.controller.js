@@ -7,7 +7,13 @@
   HomeController.$inject = [];
 
   function HomeController() {
-    
+
+    var self = this;
+
+    self.user = {
+      name:"Username"
+    };
+
   };
 
 })();
