@@ -1,4 +1,8 @@
-angular.module('petvet.controllers', [])
+angular.module('petvet.controllers',
+  [
+    'petvet.factories'
+  ]
+)
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 

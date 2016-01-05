@@ -4,7 +4,7 @@
 // 'petvet' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'petvet.controllers' is found in controllers.js
-angular.module('petvet', ['ionic', 'petvet.controllers'])
+angular.module('petvet', ['ionic', 'petvet.controllers', 'petvet.factories'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -29,7 +29,8 @@ angular.module('petvet', ['ionic', 'petvet.controllers'])
     url: '/app',
     abstract: true,
     templateUrl: 'js/components/menu/menu.template.html',
-    controller: 'MenuController'
+    controller: 'MenuController',
+    controllerAs:'vm'
   })
 
   .state('login', {
@@ -65,42 +66,43 @@ angular.module('petvet', ['ionic', 'petvet.controllers'])
 
   .state('app.patient', {
     url: '/patient/:patientId',
+    abstract: true,
     views: {
       'menuContent': {
         templateUrl:'js/components/patient/patient.template.html',
         controller:'PatientController',
+        controllerAs:'patient',
+        resolve: {
+          patient: function($stateParams, PatientFactory) {
+            return PatientFactory.get($stateParams.patientId);
+          }
+        }
+      }
+    }
+  })
+
+  .state('app.patient.detail', {
+    url: '/detail',
+    views: {
+      'patientContent': {
+        templateUrl:'js/components/patient/patient.detail.template.html',
+        controller:'PatientDetailController',
         controllerAs:'vm'
       }
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
+  .state('app.feed', {
+    url: '/feed',
     views: {
       'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'js/components/feed/feed.template.html',
+        controller:'FeedController',
+        controllerAs:'feed'
       }
     }
-  });
+  })
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 });

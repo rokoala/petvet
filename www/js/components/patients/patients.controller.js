@@ -4,34 +4,13 @@
     .module('petvet.controllers')
     .controller('PatientsController',PatientsController)
 
-  PatientsController.$inject = [];
+  PatientsController.$inject = ['PatientFactory'];
 
-  function PatientsController() {
+  function PatientsController(PatientFactory) {
 
     var self = this;
 
-    self.patients = [{
-      name:"User A",
-      pet:{
-        name:"Mimi",
-        type:"cat"
-      }
-    },
-    {
-      name:"User B",
-      pet:{
-        name:"Thor",
-        type:"dog"
-      }
-    },
-    {
-      name:"User C",
-      pet:{
-        name:"Jake the dog",
-        type:"dog"
-      }
-    }]
-
+    self.patients = PatientFactory.getAll();
   };
 
 })();

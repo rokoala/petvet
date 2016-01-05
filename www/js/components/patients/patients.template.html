@@ -9,10 +9,12 @@
     <ion-list>
       <ion-item ng-repeat="patient in vm.patients | filter:vm.searchText" >
         <div class="list">
-            <a class="item item-thumbnail-left" href="#/app/patient/{{patient.id}}">
+            <a class="item item-thumbnail-left" href="#/app/patient/{{patient.id}}/detail">
               <img src="img/ionic.png">
               <h2>{{patient.pet.name}}</h2>
-              <h3><label>Dono: </label>{{patient.name}}</h3>
+              <h3>Raça: {{patient.pet.breed}}</h3>
+              <h3>Dono: {{patient.name}}</h3>
+              <p>Última consulta: {{patient.pet.lastAppointment | date:'dd/MM/yyyy'}}</p>
             </a>
         </div>
       </ion-item>

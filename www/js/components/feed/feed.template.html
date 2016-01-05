@@ -1,0 +1,25 @@
+<ion-view view-title="Atualizações">
+ <ion-content>
+
+  <div class="list card" ng-repeat="row in [1,2,3,4,5,6,7]">
+     <a class="item item-avatar" href="#/app/patient/1/detail">
+       <img src="/img/ionic.png">
+       <h2>{{patient.data.pet.name}}</h2>
+       <h3>Raça: {{patient.data.pet.breed}}</h3>
+       <h3>Dono: {{patient.data.name}}</h3>
+       <p>{{patient.data.pet.lastAppointment | date:'dd/MM/yyyy'}}</p>
+     </a>
+
+     <div class="item item-body" style="height:25vh; overflow:hidden;">
+       <p>
+         <label>Sintomas:</label>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lobortis aliquet lobortis. Curabitur justo nisi, cursus eu pulvinar sed, mattis quis turpis. Maecenas vulputate bibendum turpis in placerat. Phasellus vestibulum, elit et fringilla vehicula, augue purus commodo dui, nec pulvinar odio enim vitae felis. Etiam elementum sagittis consectetur. Aliquam id ante vitae lectus rhoncus ultrices. Aliquam sit amet tortor ac massa vehicula elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus sapien arcu, cursus sed odio eu, tempus ornare risus. Proin ornare, quam quis elementum aliquet, erat arcu vehicula ante, hendrerit sodales dolor odio tristique nibh.
+      </p>
+      <p>
+       <label for="feed-photo">Fotos:</label>
+      </p>
+     </div>
+   </div>
+
+  </ion-content>
+</ion-view>

@@ -2,14 +2,24 @@
 
   angular
     .module('petvet.controllers')
-    .controller('PatientController',PatientController)
+    .controller('PatientController', PatientController)
+    .controller('PatientDetailController', PatientDetailController)
 
-  PatientController.$inject = [];
+  PatientController.$inject = ['patient', '$state'];
 
-  function PatientController() {
-    this.user = {
-      name:"teste"
-    };
+  function PatientController(patient, $state) {
+    var self = this;
+
+    this.data = patient;
+
+    this.state = $state;
   };
+
+  PatientDetailController.$inject = [];
+
+  function PatientDetailController() {
+    var self = this;
+
+  }
 
 })();
