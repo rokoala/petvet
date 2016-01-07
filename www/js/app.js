@@ -28,14 +28,14 @@ angular.module('petvet', ['ionic', 'petvet.controllers', 'petvet.factories'])
   .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'js/components/menu/menu.template.html',
+    templateUrl: 'js/components/menu/menu.html',
     controller: 'MenuController',
     controllerAs:'vm'
   })
 
   .state('login', {
     url: '/login',
-    templateUrl: 'js/components/login/login.template.html',
+    templateUrl: 'js/components/login/login.html',
     controller: 'LoginController',
     controllerAs: 'vm'
   })
@@ -45,8 +45,19 @@ angular.module('petvet', ['ionic', 'petvet.controllers', 'petvet.factories'])
     url:'/home',
     views:{
       'menuContent':{
-        templateUrl:'js/components/home/home.template.html',
+        templateUrl:'js/components/home/home.html',
         controller:'HomeController',
+        controllerAs:'vm'
+      }
+    }
+  })
+
+  .state('app.addPatient', {
+    url:'/add/patient',
+    views:{
+      'menuContent':{
+        templateUrl:'js/components/patient/patient.add.html',
+        controller:'PatientAddController',
         controllerAs:'vm'
       }
     }
@@ -56,7 +67,7 @@ angular.module('petvet', ['ionic', 'petvet.controllers', 'petvet.factories'])
     url: '/patients',
     views: {
       'menuContent': {
-        templateUrl:'js/components/patients/patients.template.html',
+        templateUrl:'js/components/patients/patients.html',
         controller:'PatientsController',
         controllerAs:'vm'
       }
@@ -69,7 +80,7 @@ angular.module('petvet', ['ionic', 'petvet.controllers', 'petvet.factories'])
     abstract: true,
     views: {
       'menuContent': {
-        templateUrl:'js/components/patient/patient.template.html',
+        templateUrl:'js/components/patient/patient.html',
         controller:'PatientController',
         controllerAs:'patient',
         resolve: {
@@ -85,7 +96,7 @@ angular.module('petvet', ['ionic', 'petvet.controllers', 'petvet.factories'])
     url: '/detail',
     views: {
       'patientContent': {
-        templateUrl:'js/components/patient/patient.detail.template.html',
+        templateUrl:'js/components/patient/patient.detail.html',
         controller:'PatientDetailController',
         controllerAs:'vm'
       }
@@ -96,7 +107,7 @@ angular.module('petvet', ['ionic', 'petvet.controllers', 'petvet.factories'])
     url: '/feed',
     views: {
       'menuContent': {
-        templateUrl: 'js/components/feed/feed.template.html',
+        templateUrl: 'js/components/feed/feed.html',
         controller:'FeedController',
         controllerAs:'feed'
       }
