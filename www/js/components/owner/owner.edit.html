@@ -1,0 +1,45 @@
+<ion-view view-title="Paciente">
+  <ion-content>
+    <form name="editPatient">
+      <div class="list">
+        <div class="item item-divider">
+          Dados do Proprietário
+        </div>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Nome</span>
+          <input type="text" placeholder="João dos santos" ng-model="vm.user.name">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Email</span>
+          <input type="text" placeholder="joao@gmail.com" ng-model="vm.user.email">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">CPF</span>
+          <input type="text" placeholder="xxx.xxx.xxx-xx" ng-model="vm.user.cpf">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Endereço</span>
+          <input type="text" placeholder="Rua antonio da silva 24" ng-model="vm.user.address">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Telefone</span>
+          <input type="text" placeholder="(11)9819-0424" ng-model="vm.user.telephone">
+        </label>
+      </div>
+    </form>
+    <!-- <button class="button button-full button-calm" ng-click="vm.edit(vm.user)">
+      <i class="icon-left ion-plus-circled"></i>
+      Salvar</button> -->
+    <div class="list">
+      <div class="item item-divider">
+        Pets do Proprietário
+      </div>
+      <label class="item item-input item-stacked-label">
+        <button class="button button-full button-calm">
+          <i class="icon-left ion-plus-circled"></i>
+          Novo pet
+        </button>
+      </label>
+    </div>
+  </ion-content>
+</ion-view>

@@ -52,28 +52,38 @@ angular.module('petvet', ['ionic', 'petvet.controllers', 'petvet.factories'])
     }
   })
 
-  .state('app.addPatient', {
-    url:'/add/patient',
+  .state('app.addOwner', {
+    url:'/add/owner',
     views:{
       'menuContent':{
-        templateUrl:'js/components/patient/patient.add.html',
-        controller:'PatientAddController',
+        templateUrl:'js/components/owner/owner.add.html',
+        controller:'OwnerAddController',
         controllerAs:'vm'
       }
     }
   })
 
-  .state('app.patients', {
+  .state('app.editOwner', {
+    url:'/edit/owner/:id',
+    views:{
+      'menuContent':{
+        templateUrl:'js/components/owner/owner.edit.html',
+        controller:'OwnerEditController',
+        controllerAs:'vm'
+      }
+    }
+  })
+
+  .state('app.patientList', {
     url: '/patients',
     views: {
       'menuContent': {
-        templateUrl:'js/components/patients/patients.html',
-        controller:'PatientsController',
+        templateUrl:'js/components/patient/patient.list.html',
+        controller:'PatientListController',
         controllerAs:'vm'
       }
     }
   })
-
 
   .state('app.patient', {
     url: '/patient/:patientId',
@@ -98,6 +108,17 @@ angular.module('petvet', ['ionic', 'petvet.controllers', 'petvet.factories'])
       'patientContent': {
         templateUrl:'js/components/patient/patient.detail.html',
         controller:'PatientDetailController',
+        controllerAs:'vm'
+      }
+    }
+  })
+
+  .state('app.ownerList',{
+    url:'/owners',
+    views:{
+      'menuContent':{
+        templateUrl:'js/components/owner/owner.list.html',
+        controller:'OwnerListController',
         controllerAs:'vm'
       }
     }

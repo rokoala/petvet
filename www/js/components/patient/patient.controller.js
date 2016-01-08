@@ -1,10 +1,11 @@
-;(function () {
+;
+(function() {
 
   angular
     .module('petvet.controllers')
     .controller('PatientController', PatientController)
     .controller('PatientDetailController', PatientDetailController)
-    .controller('PatientAddController', PatientAddController)
+    .controller('PatientListController', PatientListController)
 
   PatientController.$inject = ['patient', '$state'];
 
@@ -22,12 +23,12 @@
     var self = this;
   };
 
-  PatientAddController.$inject = [];
+  PatientListController.$inject = ['PatientFactory'];
 
-  function PatientAddController() {
+  function PatientListController(PatientFactory) {
     var self = this;
-    this.hello = "olar"
-  };
 
+    self.patients = PatientFactory.getAll();
+  }
 
 })();

@@ -3,15 +3,15 @@
     <ion-nav-bar class="bar-stable" align-title="center">
 
       <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-        </button>
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
       </ion-nav-buttons>
 
-      <ion-nav-back-button>
-      </ion-nav-back-button>
+      <ion-nav-back-button></ion-nav-back-button>
 
       <ion-nav-buttons side="right">
-        <button class="button button-clear button-positive"><i class="icon ion-person"></i> Person</button>
+        <button class="button button-clear button-positive">
+          <i class="icon ion-person"></i>
+          Person</button>
       </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
@@ -29,17 +29,17 @@
         <ion-item menu-close href="#/app/patients">
           Pacientes
         </ion-item>
-        <ion-item menu-close href="#/app/add/patient">
-          Novo Paciente
+        <ion-item menu-close href="#/app/owners">
+          Proprietários
+        </ion-item>
+        <ion-item menu-close href="#/app/add/owner">
+          Novo Proprietário
         </ion-item>
         <ion-item menu-close href="#/app/feed">
           Atualizações
         </ion-item>
         <ion-item menu-close href="#/app/playlists">
           Chamadas/Agenda
-        </ion-item>
-        <ion-item menu-close href="#/app/playlists">
-          Proprietários
         </ion-item>
       </ion-list>
     </ion-content>
