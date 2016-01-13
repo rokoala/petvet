@@ -1,33 +1,44 @@
- <ion-view view-title="Paciente {{patient.name}}">
+<ion-view view-title="Paciente {{patient.name}}">
   <ion-content>
-   <div class="list card">
-      <div class="item item-avatar">
+    <div class="list">
+      <div class="item item-divider item-avatar">
         <img src="/img/ionic.png">
         <h2>{{patient.data.pet.name}}</h2>
-        <h3>Raça: {{patient.data.pet.breed}}</h3>
-        <h3>Dono: {{patient.data.name}}</h3>
-        <p>Última consulta: {{patient.data.pet.lastAppointment | date:'dd/MM/yyyy'}}</p>
+        <h3>Dono:
+          {{patient.data.name}}</h3>
+        <p>Última consulta:
+          {{patient.data.pet.lastAppointment | date:'dd/MM/yyyy'}}</p>
       </div>
 
-      <div class="item item-body" style="height:25vh; overflow:hidden;">
-        <ion-nav-view name="patientContent" style="background-color:white"></ion-nav-view>
-      </div>
+      <a class="item item-icon-left item-icon-right" href="#/app/patient/{{patient.data.id}}/detail">
+        <i class="icon ion-clipboard"></i>
+        Caracteristicas
+        <i class="icon ion-arrow-right-c"></i>
+      </a>
 
-      <div class="item tabs tabs-secondary tabs-icon-left">
-        <a class="tab-item" ng-class="{active: patient.state.current.name === 'app.patient.detail'}">
+      <a class="item item-icon-left item-icon-right" href="#">
+        <i class="icon ion-ios-paper-outline"></i>
+        Prontuário
+        <i class="icon ion-arrow-right-c"></i>
+      </a>
+
+      <!-- <ion-nav-view name="patientContent" style="background-color:white"></ion-nav-view> -->
+
+      <!-- <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item" ng-href="#/app/patient/{{patient.data.id}}/detail" ng-class="{active: patient.state.current.name === 'app.patient.detail'}">
           <i class="icon ion-clipboard"></i>
           Dados
         </a>
-        <a class="tab-item" ng-class="{active: patient.state.current.name === 'app.patient.records'}">
+        <a class="tab-item" ng-href="#/app/patient/{{patient.data.id}}/records" ng-class="{active: patient.state.current.name === 'app.patient.recordList'}">
           <i class="icon ion-ios-paper-outline"></i>
           Prontuário
-        </a>
-        <!-- <a class="tab-item">
+        </a> -->
+      <!-- <a class="tab-item">
           <i class="icon ion-trash-a"></i>
           Remover
         </a> -->
-      </div>
-    </div>
+      <!-- </div> -->
+      <!-- </div> -->
 
-   </ion-content>
-</ion-view>
+    </ion-content>
+  </ion-view>

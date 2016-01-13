@@ -1,0 +1,9 @@
+<ion-view view-title="Prontuário do Paciente">
+  <ion-content>
+    <h2>Histórico</h2>
+    <ul>
+      <li ng-repeat="record in vm.records"><label for="recordDate">{{record.date | date:'dd/MM/yyyy'}}</label>: {{record.name}}</li>
+    </ul>
+    <a href="#/app/patient/{{patient.data.id}}/records/add" class="button button-outline button-positive" name="addRecord">Novo Registro</a>
+  </ion-content>
+</ion-view>

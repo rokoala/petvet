@@ -1,0 +1,18 @@
+<ion-view view-title="Adicionar registro no prontuário">
+  <ion-content>
+    <h2>Adicionar registro</h2>
+    <div>
+      <select>
+        <option selected>Exame Físico</option>
+        <option>Anamnese</option>
+        <option>Exame Raio X</option>
+        <option>Diagnóstico e prescrição</option>
+        <option>Retorno</option>
+      </select>
+    </div>
+    <div>
+      <a href="#/app/patient/{{vm.patientId}}/records/" class="button button-outline button-balanced" name="addRecord">
+        <i class="ion-plus-round icon-left"></i>
+        Adicionar registro</a>
+    </ion-content>
+  </ion-view>

@@ -1,12 +1,26 @@
 <ion-view view-title="Dados Paciente">
   <ion-content>
-      <p>
-        <label>Peso: </label>
-        {{patient.data.pet.weight}} g
-      </p>
-      <p>
-        <label>Idade: </label>
-        {{patient.data.pet.age}} anos
-      </p>
+    <div class="item">
+      <label>Nome:
+      </label>
+      {{vm.patient.pet.name}}
+    </div>
+    <div class="item">
+      <label>Raça:
+      </label>
+      {{vm.patient.pet.breed}}
+    </div>
+    <div class="item">
+      <label>Peso:
+      </label>
+      {{vm.patient.pet.weight}}
+      g
+    </div>
+    <div class="item">
+      <label>Idade:
+      </label>
+      {{vm.patient.pet.age}}
+      anos
+    </div>
   </ion-content>
 </ion-view>

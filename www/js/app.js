@@ -87,7 +87,6 @@ angular.module('petvet', ['ionic', 'petvet.controllers', 'petvet.factories'])
 
   .state('app.patient', {
     url: '/patient/:patientId',
-    abstract: true,
     views: {
       'menuContent': {
         templateUrl:'js/components/patient/patient.html',
@@ -102,12 +101,39 @@ angular.module('petvet', ['ionic', 'petvet.controllers', 'petvet.factories'])
     }
   })
 
-  .state('app.patient.detail', {
-    url: '/detail',
+  .state('app.patientDetail', {
+    url: '/patient/:patientId/detail',
     views: {
-      'patientContent': {
+      'menuContent': {
         templateUrl:'js/components/patient/patient.detail.html',
         controller:'PatientDetailController',
+        controllerAs:'vm',
+        resolve: {
+          patient: function($stateParams, PatientFactory) {
+            return PatientFactory.get($stateParams.patientId);
+          }
+        }
+      }
+    }
+  })
+
+  .state('app.patient.recordList', {
+    url: '/records',
+    views: {
+      'patientContent': {
+        templateUrl:'js/components/record/record.list.html',
+        controller:'RecordListController',
+        controllerAs:'vm'
+      }
+    }
+  })
+
+  .state('app.patient.addRecord', {
+    url: '/records/add',
+    views: {
+      'patientContent': {
+        templateUrl:'js/components/record/record.add.html',
+        controller:'RecordAddController',
         controllerAs:'vm'
       }
     }

@@ -8,11 +8,11 @@
 
       <ion-nav-back-button></ion-nav-back-button>
 
-      <ion-nav-buttons side="right">
+      <!-- <ion-nav-buttons side="right">
         <button class="button button-clear button-positive">
           <i class="icon ion-person"></i>
           Person</button>
-      </ion-nav-buttons>
+      </ion-nav-buttons> -->
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
@@ -22,46 +22,60 @@
       <h1 class="title">Menu</h1>
     </ion-header-bar>
     <ion-content>
-      <ion-list>
-        <ion-item menu-close href="#/app/home">
+      <div class="list">
+        <a menu-close class="item item-icon-left" href="#/app/home">
+          <i class="icon ion-home"></i>
           Home
-        </ion-item>
-        <ion-item menu-close href="#/app/patients">
-          Pacientes
-        </ion-item>
-        <ion-item menu-close href="#/app/owners">
-          Proprietários
-        </ion-item>
-        <ion-item menu-close href="#/app/add/owner">
-          Novo Proprietário
-        </ion-item>
-        <ion-item menu-close href="#/app/feed">
+        </a>
+        <a menu-close class="item item-icon-left" href="#/app/feed">
+          <i class="icon ion-ios-bell"></i>
           Atualizações
-        </ion-item>
-        <ion-item menu-close href="#/app/playlists">
+        </a>
+        <a menu-close class="item item-icon-left" href="#/app/patients">
+          <i class="icon ion-clipboard"></i>
+          Pacientes
+        </a>
+        <a menu-close class="item item-icon-left" href="#/app/owners">
+          <i class="icon ion-person-stalker"></i>
+          Proprietários
+        </a>
+        <!-- <a menu-close class="item item-icon-left" href="#/app/add/owner">
+          <i class="icon ion-person-add"></i>
+          Novo Proprietário
+        </a> -->
+        <a menu-close class="item item-icon-left" href="#/app/playlists">
+          <i class="icon ion-calendar"></i>
           Chamadas/Agenda
-        </ion-item>
-      </ion-list>
+        </a>
+      </div>
     </ion-content>
   </ion-side-menu>
 
-  <div class="tabs tabs-icon-top">
+  <!-- <div class="tabs tabs-icon-top">
     <a class="tab-item" ng-class="{active: vm.state.current.name === 'app.home'}" href="#/app/home" ng-click="vm.clearHistory()">
       <i class="icon ion-home"></i>
       Home
-    </a>
-    <a class="tab-item" ng-class="{active: vm.state.current.name === 'app.patients'}" href="#/app/patients" ng-click="vm.clearHistory()">
-      <i class="icon ion-person-stalker"></i>
-      Pacientes
     </a>
     <a class="tab-item" ng-class="{active: vm.state.current.name === 'app.feed'}" href="#/app/feed" ng-click="vm.clearHistory()">
       <i class="icon ion-ios-bell"></i>
       Atualizações
     </a>
+    <a class="tab-item" ng-class="{active: vm.state.current.name === 'app.patientList'}" href="#/app/patients" ng-click="vm.clearHistory()">
+      <i class="icon ion-clipboard"></i>
+      Pacientes
+    </a>
+    <a class="tab-item" ng-class="{active: vm.state.current.name === 'app.ownerList'}" href="#/app/owners" ng-click="vm.clearHistory()">
+      <i class="icon ion-person-stalker"></i>
+      Proprietários
+    </a>
+    <a class="tab-item" ng-class="{active: vm.state.current.name === 'app.addOwner'}" href="#/app/add/owner" ng-click="vm.clearHistory()">
+      <i class="icon ion-person-add"></i>
+      Novo proprietário
+    </a>
     <a class="tab-item">
       <i class="icon ion-calendar"></i>
       Chamados/Agenda
     </a>
-  </div>
+  </div> -->
 
 </ion-side-menus>

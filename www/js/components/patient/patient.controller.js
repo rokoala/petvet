@@ -17,10 +17,11 @@
     this.state = $state;
   };
 
-  PatientDetailController.$inject = [];
+  PatientDetailController.$inject = ['patient'];
 
-  function PatientDetailController() {
+  function PatientDetailController(patient) {
     var self = this;
+    this.patient = patient;
   };
 
   PatientListController.$inject = ['PatientFactory'];
@@ -29,6 +30,6 @@
     var self = this;
 
     self.patients = PatientFactory.getAll();
-  }
+  };
 
 })();
