@@ -6,15 +6,15 @@
         <input type="text" placeholder="Buscar" ng-model="vm.searchText">
       </label>
     </div>
-    <ion-list>
-      <ion-item ng-repeat="owner in vm.owners | filter:vm.searchText">
+    <!-- <ion-list> -->
+      <!-- <ion-item ng-repeat="owner in vm.owners | filter:vm.searchText"> -->
         <div class="list">
-          <a class="item item-thumbnail-left" href="#/app/edit/owner/{{owner.id}}">
+          <a ng-repeat="owner in vm.owners | filter:vm.searchText" class="item item-thumbnail-left" href="#/app/edit/owner/{{owner.id}}">
             <img src="img/ionic.png">
             <h2>{{owner.name}}</h2>
           </a>
         </div>
-      </ion-item>
-    </ion-list>
+      <!-- </ion-item> -->
+    <!-- </ion-list> -->
   </ion-content>
 </ion-view>

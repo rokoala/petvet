@@ -12,8 +12,9 @@
 
     var patients = [{
       id: 1,
-      name: "User A",
+      name: "João da silva",
       pet: {
+        id:1,
         name: "Mimi",
         type: "cat",
         breed: "Persa",
@@ -24,8 +25,9 @@
       }
     }, {
       id: 2,
-      name: "User B",
+      name: "Maria das Graças",
       pet: {
+        id:2,
         name: "Thor",
         type: "dog",
         breed: "Rottweiler",
@@ -36,8 +38,9 @@
       }
     }, {
       id: 3,
-      name: "User C",
+      name: "Rodrigo Koga",
       pet: {
+        id:3,
         name: "Jake the dog",
         type: "dog",
         breed: "Buldogue",

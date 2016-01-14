@@ -41,12 +41,12 @@
     };
   };
 
-  OwnerEditController.$inject = [];
+  OwnerEditController.$inject = ['owner'];
 
-  function OwnerEditController() {
+  function OwnerEditController(owner) {
     var self = this;
-
-    this.user = {};
+    console.log(owner);
+    this.user = owner;
   };
 
 })();
