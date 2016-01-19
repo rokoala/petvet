@@ -68,8 +68,8 @@ angular.module('petvet', ['ionic', 'petvet.controllers', 'petvet.factories'])
           controller: 'OwnerEditController',
           controllerAs: 'vm',
           resolve: {
-            owner: function($stateParams, OwnerFactory) {
-              return OwnerFactory.get($stateParams.id);
+            owner: function($stateParams, PatientFactory) {
+              return PatientFactory.get($stateParams.id);
             }
           }
         }
@@ -165,6 +165,16 @@ angular.module('petvet', ['ionic', 'petvet.controllers', 'petvet.factories'])
           templateUrl: 'js/components/feed/feed.html',
           controller: 'FeedController',
           controllerAs: 'feed'
+        }
+      }
+    })
+    .state('app.agenda', {
+      url: '/agenda',
+      views: {
+        'menuContent': {
+          templateUrl: 'js/components/agenda/agenda.html',
+          controller: 'AgendaController',
+          controllerAs: 'agenda'
         }
       }
     })

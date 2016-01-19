@@ -34,7 +34,10 @@
       <div class="item item-divider">
         Pets do Proprietário
       </div>
-
+      <a class="item item-avatar" href="#/app/patient/{{vm.user.pet.id}}">
+        <img ng-src="{{vm.user.pet.img}}">
+        <h2>{{vm.user.pet.name}}</h2>
+      </a>
       <label class="item item-input item-stacked-label">
         <button class="button button-full button-calm">
           <i class="icon-left ion-plus-circled"></i> Novo pet

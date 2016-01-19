@@ -1,23 +1,20 @@
 <ion-view view-title="Pacientes">
   <ion-content>
     <div class="list list-inset">
-    <label class="item item-input">
-      <i class="icon ion-search placeholder-icon"></i>
-      <input type="text" placeholder="Buscar" ng-model="vm.searchText">
-    </label>
-  </div>
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Buscar" ng-model="vm.searchText">
+      </label>
+    </div>
     <ion-list>
-      <ion-item ng-repeat="patient in vm.patients | filter:vm.searchText" >
-        <div class="list">
-            <a class="item item-avatar" href="#/app/patient/{{patient.pet.id}}">
-              <img ng-src="{{patient.pet.img}}">
-              <h2>{{patient.pet.name}}</h2>
-              <h3>Dono: {{patient.name}}</h3>
-              <p>Última consulta: {{patient.pet.lastAppointment | date:'dd/MM/yyyy'}}</p>
-            </a>
-        </div>
-      </ion-item>
+      <a ng-repeat="patient in vm.patients | filter:vm.searchText" class="item item-avatar" href="#/app/patient/{{patient.pet.id}}">
+        <img ng-src="{{patient.pet.img}}">
+        <h2>{{patient.pet.name}}</h2>
+        <h3>Dono:
+          {{patient.name}}</h3>
+        <p>Última consulta:
+          {{patient.pet.lastAppointment | date:'dd/MM/yyyy'}}</p>
+      </a>
     </ion-list>
-
   </ion-content>
 </ion-view>

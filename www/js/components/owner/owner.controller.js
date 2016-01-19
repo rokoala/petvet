@@ -45,7 +45,7 @@
 
   function OwnerEditController(owner) {
     var self = this;
-    console.log(owner);
+    
     this.user = owner;
   };
 
