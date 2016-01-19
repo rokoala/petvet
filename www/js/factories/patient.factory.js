@@ -17,9 +17,10 @@
         id:1,
         name: "Mimi",
         type: "cat",
-        breed: "Persa",
+        breed: "Scottish Fold",
         age: '5',
         weight: '3000',
+        img:'img/scottish-fold.jpg',
         lastAppointment: new Date(),
         records: {}
       }
@@ -33,6 +34,7 @@
         breed: "Rottweiler",
         age: '2',
         weight: '2000',
+        img:'img/rottweiler.png',
         lastAppointment: new Date(),
         records: {}
       }
@@ -46,6 +48,7 @@
         breed: "Buldogue",
         age: '6',
         weight: '4500',
+        img:'img/jake.png',
         lastAppointment: new Date(),
         records: {}
       }

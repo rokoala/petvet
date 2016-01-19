@@ -115,6 +115,19 @@ angular.module('petvet', ['ionic', 'petvet.controllers', 'petvet.factories'])
         }
       }
     })
+    .state('app.patientPhotos', {
+      url: '/patient/:patientId/photos',
+      views: {
+        'menuContent': {
+          templateUrl: 'js/components/patient/patient.photos.html',
+          resolve: {
+            patient: function($stateParams, PatientFactory) {
+              return PatientFactory.get($stateParams.patientId);
+            }
+          }
+        }
+      }
+    })
     .state('app.recordList', {
       url: '/patient/:patientId/records',
       views: {
